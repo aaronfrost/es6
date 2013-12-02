@@ -6,7 +6,7 @@
 // 
 // AFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAF
 
-
+/*
 // First we need to talk about VARIABLE HOISTING
 
 
@@ -16,17 +16,6 @@ if(true){
     var a = 1;
 }
 console.log(a);
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -44,6 +33,10 @@ console.log(a2);
 // the if statement, a2 is merely set, rather than being declared all together
 
 
+//*/
+/*
+
+
 // NOW WITH LET
 // Let's try the same thing with LET
 if(true){
@@ -54,7 +47,8 @@ console.log(b);
 
 // HERE IT FAILS, AS YOU WOULD EXPECT
 
-
+//*/
+/*
 
 
 
@@ -67,6 +61,11 @@ function run(){
 }
 run();
 // any guesses
+
+
+
+
+
 
 
 
@@ -95,7 +94,8 @@ run2();
 
 
 
-
+//*/
+/*
 
 // NOW LET'S USE LET
 var c3 = 1; 
@@ -106,6 +106,7 @@ function run3(){
 }
 run3();
 
+//TEMPORAL DEAD ZONE
 
 
 
@@ -113,6 +114,8 @@ run3();
 
 
 
+//*/
+/*
 // FUNCTION HOISTING
 // There is two ways to write a function, but they will behave differently
 console.log(test1());
@@ -147,7 +150,8 @@ test2 = function(){
 // with it's intial value. 
 
 
-// LET won't affect function expressions
+// LET will affect function expressions
+// function expressions will have a temporal dead zone as well
 
 
 
@@ -158,6 +162,8 @@ test2 = function(){
 
 
 
+//*/
+/*
 
 
 // LET EXPRESSIONS
@@ -166,8 +172,8 @@ let a = 1;
 let(a = a+10)
     console.log(a);
 console.log(a);
-
-
+//*/
+/*
 // LET STATEMENTS
 // Same as LET EXPRESSIONS, but you wrap the body with braces, and it can for on for
 // however long you want. 
@@ -193,8 +199,8 @@ console.log(x+y);
 
 
 
-
-
+//*/
+/*
 // LET WITH LOOPING
 // We have need this for a long time
 
@@ -226,6 +232,8 @@ console.log(j); //ERROR, because j is lexically trapped inside our for loop
 
 
 
+//*/
+///*
 
 // BLOCKED SCOPES
 // Just create a lexical scope in the middle of no where. 
@@ -238,23 +246,7 @@ let b = 10;
 console.log(a, b);
 
 // Above we created a block statement, which held two new vars, 'a' and 'b'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//*/
 
 
 

@@ -5,6 +5,12 @@
 
 // You people already know what rest parameters are 
 
+
+
+
+//*/
+/*
+
 // Here is an example
 function foo(...bar){
     console.log(bar.join(“ “));
@@ -13,6 +19,8 @@ foo('I', 'can', 'haz', 'teh', 'arguments'); // I can haz teh arguments
 
 
 
+//*/
+/*
 
 /* 
 	WOW! We finally have something that will capture all arguments passed
@@ -22,6 +30,8 @@ foo('I', 'can', 'haz', 'teh', 'arguments'); // I can haz teh arguments
 	No one thought this. We have always had the arguments object
 
 */
+//*/
+/*
 
 function foo(){
     var output = “”;
@@ -29,6 +39,8 @@ function foo(){
     console.log(output);
 }
 foo('I', 'can', 'haz', 'teh', 'arguments'); // I can haz teh arguments
+//*/
+/*
 
 /*
 	Still works. Just takes more code. Why? The arguments object isn't an actual 
@@ -43,8 +55,10 @@ foo('I', 'can', 'haz', 'teh', 'arguments'); // I can haz teh arguments
 /*HERE ARE THE RULES FOR WORKING WITH REST PARAMS*/
 
 
+//*/
+/*
 
-/*Once Per Function Signature*/
+//Once Per Function Signature
 function lotsOArgs(...first, ...second){
     console.log(“FIRST: “+first.join(“ “));
     console.log(“SECOND: “+second.join(“ “));
@@ -52,16 +66,19 @@ function lotsOArgs(...first, ...second){
 lotsOArgs(“where”,”does”,”first”,”stop”,”and”,”second”,”begin”); 
             // SyntaxError: Multiple Rest Params Defined
 
-/*DOES ANYONE KNOW WHY THIS IS DISALLOWED?*/            
+//DOES ANYONE KNOW WHY THIS IS DISALLOWED?
+//*/
+/*
 
 
-/*Must be the last formal parameter*/            
+//Must be the last formal parameter
 function foo(...bar, biz){
     // your code
 }
 foo(1, 2, 3, 4);
 // SyntaxError: Rest Param must be the last declared parameter 
 
+//*/
 
 
 
@@ -69,6 +86,10 @@ foo(1, 2, 3, 4);
 
 
 
-
-
-/*No 'arguments' object when using rest parameters*/
+/*
+function foo(...bar){
+    console.log(bar, arguments); //error
+}
+foo(1, 'aaron', 'RWX');
+//No 'arguments' object when using rest parameters
+//*/

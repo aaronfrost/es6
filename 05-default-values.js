@@ -1,5 +1,6 @@
+/*
 // Here is a simple example of default parameters
-funtion sayHello(name="World"){
+function sayHello(name="World"){
     console.log("Hello "+name+"!");
 }
 
@@ -15,7 +16,8 @@ sayHello(undefined); //Hello World!
 
 
 
-
+//*/
+/*
 // How did we used to make sure we had a default value?
 function sayHello(name){
   var _name = name || 'World';
@@ -32,6 +34,12 @@ function sayHello(name){
 // While these checked for 'undefined', they also check for falsy, which may be 
 // something that you want/need to do. 
 
+
+
+
+
+//*/
+/*
 // Rule, don't assign default value to a Rest parameters
 
 
@@ -44,7 +52,7 @@ function sayHello(name){
 function foo(bar, baz){
     bar = bar ? bar : "some default";
     baz = baz ? baz : getSomeDefault();
-    /*rest of the code*/
+    //rest of the code
 }
 // Like robots we have data-proofed our stuff manually. 
 
@@ -57,6 +65,8 @@ function foo(bar, baz){
 
 
 
+//*/
+/*
 
 // Consider the following
 var a = 0; 
@@ -75,6 +85,8 @@ test(); 	//a is now = 1
 
 
 
+//*/
+/*
 
 // In the function signature, you can declare a non-default 
 // value param AFTER a default value param. I mention this because
@@ -89,7 +101,7 @@ foo();	// logs '0', even though 'baz' was assigned to the 'bar' parameter, defau
 
 
 
-
+//*/
 /*
 
 	I love default values, as they will allow me to write less boilerplate

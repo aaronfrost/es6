@@ -1,5 +1,7 @@
 /*
-	Nothing supports Proxies yet, so I haven't been able to play with 
-	them so I am mostly unaware of what they do. Sorry, just know
-	that they will be here. 
+PROXIES are hard to grasp in one sitting. 
+
+http://wiki.ecmascript.org/doku.php?id=harmony:proxies
+https://gist.github.com/nzakas/1202328
+
 */

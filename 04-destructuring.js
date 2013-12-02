@@ -1,95 +1,184 @@
-Swapping values
+/*
+// Destructuring = PULLING THINGS APART
 
-Say you have two variables, a and b. Swap them without destructuring:
+// Destructuring An Object 
+var person = { name: 'Aaron', age: 34 };
 
-    var a = 1;
-var b = 2;
+//The Old Way
 
-console.log("a="+a+" b="+b);
-var temp;
+var name = person.name,
+    age = person.age;
 
-temp = a;
-a = b;
-b = temp;
+//The New Way
 
-console.log("swapped a="+a+" b="+b);
-
-
-
-With destructuring, the temp variable is eliminated and the swap takes place in one line of code:
-
-    ============================
-//Destructuring - value swap
-var a = 1;
-var b = 2;
-
-console.log("pre swap: a ="+a+", b="+b);
-[a,b] = [b,a];
-
-console.log("post swap: a ="+a+", b="+b);
+let {name, age} = person;
 
 
 
-//===============================
-//Destructuring - returning many values:
-
-var aValue = 1;
-var bValue = 2;
-var cValue = 3;
-var dValue = 4;
-
-console.log("aValue="+aValue+ ", bValue="+bValue+", cValue="+cValue+ ", dValue="+dValue);
-
-[aValue,bValue,cValue,dValue] = returnMany(aValue,bValue,cValue,dValue);
-
-console.log("aValue="+aValue+ ", bValue="+bValue+", cValue="+cValue+ ", dValue="+dValue);
 
 
-function returnMany(a, b, c, d){
-    return [a+1,b+1,c+1,d+1] ;
+
+
+
+
+
+
+
+
+
+//*/
+/*
+//Destructuring An Array
+var array = [1, 100];
+
+//The Old Way
+var a = array[0],
+    b = array[1];
+
+//The New Way
+let [a, b] = array;
+
+
+
+
+
+
+
+
+
+
+//*/
+/*
+//Deeper into an Object
+
+var person = { 
+    name: 'Aaron',
+    age: 34,
+    address: {
+        street: '123 Main Street',
+        city: 'Salt Lake City',
+        state: 'UT',
+        zip: '84115'
+    }
+};
+let {name, age, address: {zip}} = person;
+console.log(name, age, zip);
+
+
+
+
+
+
+
+
+
+
+//*/
+/*
+//Alias the var names
+
+var person = { 
+    name: 'Aaron',
+    age: 34,
+    address: {
+        street: '123 Main Street',
+        city: 'Salt Lake City',
+        state: 'UT',
+        zip: '84115'
+    }
+};
+let {name, age, address: {zip: wizbang}} = person;
+console.log(name, age, wizbang);
+
+
+
+
+
+
+
+
+
+
+//*/
+/*
+//Deeper into an Array
+var array = [1, 2, 3, 4, [-1, -2, -3]];
+
+//
+let [first, second, , , [ , , nth]] = array;
+console.log(first, second, nth);
+
+
+
+
+
+
+
+
+
+
+//*/
+/*
+//Destructuring Pattern Matching
+let person = { name: 'Aaron', age: 34};
+
+//Missing Target Properties
+let {name, age, address: {zip}} = person;
+
+//Should throw an error for address and zip? 
+//Since they don't exist?
+
+//Proposed Solution
+let {name, age, ?address: {zip}} = person;
+let {name, age, address = undefined: {zip=undefined}} = person;
+
+//NOT FINALIZED, as of a few months ago
+
+
+
+
+
+
+
+
+
+//*/
+/*
+//COOL THINGS TO DO WITH DESTRUCTURING
+
+//Swap Variables
+var [b, a] = [a, b];
+
+//Destructure in the function signature
+function displayPerson({name, age, address}){
+    print(name);
+    print(age);
+    print(address);
 }
-//============================
-//Destructuring - Matching function parameters
+displayPerson(person);
 
-var array1 = [121,4];
-var result = destructuring (array1,5);
 
-console.log(result);
+//Destructure a String
+var [a, b, c, d] = 'HELLO RWX 2013!';
 
-function destructuring([x,y],z,l,m){
-    console.log("l"+l);
-    return x+y+z+l;
-}
-============================
-    Destructuring - filtering function parameters
 
-    let result = someElements([2,4,6,8,5]);
-console.log("result = "+result);
+//*/
 
 
 
-function someElements([,b,,c])  {
-    console.log("b="+b);
-    console.log("c="+c);
-    return b+c;
-}
-
-
-============================
-    Destructuring - filtering object parameters
-
-var myObject = {nombre: "Dude",age:"51",gender:"male",nice:"no"};
-var result = digOutData(myObject);
-
-console.log("name:"+result.name +" age: "+result.age);
-console.log("nice"+result.nice) ;
 
 
 
-function digOutData({age:a ,nombre:name, gender:g}){
-    console.log("Name:"+name);   //Name: Dude
-    console.log("Age:"+a);             //Age: 51
-    console.log("Gender:"+g);       //Gender : undefined
-    return {name:name,age:a};
-}
+
+
+
+
+
+
+
+
+
+
+
+
 

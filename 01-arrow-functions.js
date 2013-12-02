@@ -5,7 +5,7 @@
 // AFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAFAF
 // First we need to understand THIS 
 // 		THIS in JS != THIS in Java
-
+/*
 
 // 1. GLOBAL THIS (ie: window object)
 console.log(this);
@@ -13,6 +13,8 @@ function foo(){
 	console.log(this);  //logs the window object
 }
 foo();
+//*/
+/*
 
 // 2. Objects
 function Foo(){
@@ -23,6 +25,9 @@ function Foo(){
 }
 new Foo().bar(); 	//logs a new Foo object
 Foo().bar();		//logs the window object
+
+//*/
+/*
 
 // 3. Call and Apply
 function foo(){
@@ -42,13 +47,21 @@ function foo(){
 foo();
 foo.call(obj);
 
+//*/
+/*
+
+
 // 4. EVAL, takes the local this
 function Foo(){
 	eval('console.log(this);');
 }
 new Foo();	//logs the object
 
-// Problem with the current way. Closures explode!!!
+
+//*/
+/*
+
+// PROBLEM with the current way. Closures explode!!!
 function Aaron(){
     this.favoriteSaying = "I love Google!";
     this.saySomething = function(){
@@ -60,12 +73,19 @@ a.saySomething();     //logs "I love Google!"
 
 function Speaker(){
     this.speakForSomeone = function(speakMethod){
-        speakMethod();
+        this.speak = speakMethod;
+        this.speak();
     }
 }
 new Speaker().speakForSomeone(a.saySomething); //logs 'undefined'
 
-// To fix this you say var me = this;
+// QUICK FIX: var me = this;
+
+
+//*/
+/*
+
+
 
 // Arrow Functions are a new THIS
 // without having to explicitly state it, your Arrow Function binds to the parent THIS.
@@ -78,27 +98,43 @@ function Aaron(){
     }
 }
 
+//*/
+/*
 
 
 // You don't have to exploit Arrow Functions for their lexical THIS binding.
 // It is fine to use them as a simpler syntax ontop of what you are already
 // used to. 
-let foo = () => console.log("bar");
+let foo = () => console.log('bar');
 foo();	//logs 'bar'
+
+
+//SAME AS
+let foo = function(){
+    console.log('bar');
+}
+foo();
+
+//*/
+/*
+
 
 let add = (x,y)=> x+y;
 console.log(add(1,2));
-//note, if it is one line... no params are needed. 
-//another note, if it is one line, no need to use the word return. Last line will 
-// always get returned
 
-// if it only takes one argument, no parenthesis is required
-let logger = thingToLog => console.log(thingToLog);
-// you could surround 'thingToLog' with parenthesis, but it isn't necessary when 
-// only one parameter is declared.
+//note, no curly braces are necessary
+//note2, if you don't use curly braces, implicit return of expression
+//note3, if you use curly braces, no implicit return of expression
+let add = (x, y) => { return x + y};
+//*/
+///*
 
+//COOL? NOT COOL?
+let foo = () => console.log('bar');     //REQUIRED
+let foo = x => console.log('bar');      //OPTIONAL
+let foo = (x, y) => console.log('bar'); //REQUIRED
 
-
+//*/
 
 
 

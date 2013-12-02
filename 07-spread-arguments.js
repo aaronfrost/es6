@@ -1,3 +1,5 @@
+//NOT IMPLEMENTED IN FIREFOX
+
 function returnTwo(a,b){
 	return [b,a];
 }
@@ -12,7 +14,7 @@ var c = returnTwo(...a);        // [2, 1]
 	On this last call, it actually passed all three items from the array, but the 
 	function only used those arguments that it needed
 */
-returnTo(1,2,3) == returnTwo(...a); //true
+returnTwo(1,2,3) == returnTwo(...a); //true
 
 
 
@@ -43,7 +45,7 @@ var c = [ ...a, ...b ];    // [1, 2, 3, "a", "b", "c"];
 
 
 /*
-	Any function that return an array can be decorated with the '...'
+	Any function that returns an array can be decorated with the '...'
 */
 function a(){
     return [1,2,3];

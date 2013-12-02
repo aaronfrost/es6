@@ -1,4 +1,3 @@
-
 var name = "Freddie Mercury",
     msg = `Hello, ${name}!`;
     
@@ -7,6 +6,9 @@ console.log(msg);    // "Hello, Freddie Mercury!"
 /*
 	Here is a simple example.
 */
+
+
+
 
 
 /*
@@ -18,25 +20,21 @@ var total = 30,
 console.log(msg);       // "The total is 30 (31.5 with tax)"
 
 
+
+
 /*
+
 	Multi-line Strings
+
 */
-var text = `First line
-
-
-
-			Fifth line`;
+var text = "First line\n\
+			Second line";
 
 
 /*
+	
 	Basic String Formatting
+
 */			
 console.log("Hello %s", "world"); 
 console.log("The count is %d", 5);    // "The count is 5"
-
-
-
-
-//MUCH MORE.
-//Best write up here: 
-//http://www.slideshare.net/domenicdenicola/es6-the-awesome-parts
