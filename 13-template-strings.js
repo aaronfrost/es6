@@ -38,3 +38,10 @@ var text = "First line\n\
 */			
 console.log("Hello %s", "world"); 
 console.log("The count is %d", 5);    // "The count is 5"
+
+
+
+
+//MUCH MORE.
+//Best write up here: 
+//http://www.slideshare.net/domenicdenicola/es6-the-awesome-parts
